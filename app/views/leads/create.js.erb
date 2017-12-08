@@ -1,11 +1,11 @@
 // Changing Button on Card after Lead added
 // var hello = document.querySelector("#lead-button-<%=@person.id%>");
-$('#lead-button-<%=@person.id%>').html("<i class='fa fa-check' aria-hidden='true'></i>");
-document.querySelector("#lead-button-<%=@person.id%>").classList.add("disabled");
+document.getElementById('card-lead-bottom-<%=@person.id%>').innerHTML = '<i class="fa fa-check" aria-hidden="true"></i><%= link_to "See your leads", leads_path, class: "leads-added-link" %>';
+// document.querySelector("#lead-button-<%=@person.id%>").classList.add("disabled");
 
-document.querySelector("#lead-button-<%=@person.id%>").classList.remove("btn-warning");
-document.querySelector("#lead-button-<%=@person.id%>").classList.add("btn-success");
+// document.querySelector("#lead-button-<%=@person.id%>").classList.remove("btn-warning");
+// document.querySelector("#lead-button-<%=@person.id%>").classList.add("btn-success");
 
 
-
+document.getElementById('card-lead-bottom-<%=@person.id%>').classList.add("card-lead-bottom-added");
 

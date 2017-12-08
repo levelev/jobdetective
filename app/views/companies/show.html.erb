@@ -65,19 +65,13 @@
 
 
     <div class="col-xs-12 col-md-5 col-md-push-1  ">
-      <div class="card-white">
-        <div class="card-part-left">
-          <div class="image-lead-container" style="background-image: url('<%= image_path user.linkedin_pic_url %>');">
-            <%# image_tag user.linkedin_pic_url %>
+      <div class="card-leads">
+        <div class="card-lead-top">
+          <div class="card-lead-picture" style="background-image: url('<%= image_path user.linkedin_pic_url %>');">
           </div>
-
-        </div>
-        <div class="card-part-right">
-          <div class="card-white-description-leads">
+          <div class="card-lead-infos">
             <h2><%= "#{user.first_name} #{user.last_name}"%></h2>
             <p class="badge badge-primary employee-role-badge"><%= "#{user.employment_role}" %></p>
-          </div>
-          <div class="card-white-description-list">
             <ul class="list-inline leads-elements-list">
               <li>
                 <a href=<%="https://www.linkedin.com/search/results/index/?keywords=#{user.first_name}%20#{user.last_name}%20#{@company.name}" %> target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
@@ -86,23 +80,19 @@
               <li>
                 <a href=<%="mailto:#{user.email}"%>><i class="fa fa-envelope" aria-hidden="true"></i></a>
               </li>
-            </ul>
-            <% end %>
-            <div class="leads-addable">
-
-              <% if Lead.where(user_id: current_user, person:user).first %>
-              <%= link_to user_leads_path(user), method: :post, remote: true, class: "btn btn-success disabled btn-sm  card-white-cta-buton", id: "lead-button-disabled-#{user.id}" do %><span class="fa fa-check fa-1x"></span><% end %>
-              <% else %>
-              <%= link_to 'Add', user_leads_path(user), method: :post, remote: true, class: "btn btn-warning btn-sm card-white-cta-buton", id: "lead-button-#{user.id}" %>
               <% end %>
-            </div>
+            </ul>
           </div>
         </div>
+        <div class="card-lead-bottom <%= "card-lead-bottom-added" if Lead.where(user_id: current_user, person:user).any? %>" id="card-lead-bottom-<%= user.id %>">
+          <% if Lead.where(user_id: current_user, person:user).first %>
+            <span class="fa fa-check fa-1x"></span><%= link_to "See your leads", leads_path, class: "leads-added-link" %>
+          <% else %>
+            <span>Add to your leads</span>
+            <%= link_to 'Add', user_leads_path(user), method: :post, remote: true, class: "btn-cta-leads", id: "lead-button-#{user.id}" %>
+          <% end %>
+        </div>
       </div>
-
-
-
-
     </div>
     <% end %>
   </div>

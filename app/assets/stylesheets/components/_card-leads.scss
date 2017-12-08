@@ -1,0 +1,68 @@
+.card-leads {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card-lead-top {
+  flex: 1 0 auto;
+  display: flex;
+}
+
+.card-lead-bottom {
+  position: relative;
+  flex: 0 0 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $brand-primary;
+  color: white;
+  font-size: 14px;
+  a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+  }
+}
+
+.card-lead-picture {
+  flex: 0 0 25%;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.card-lead-infos {
+  padding-left: 20px;
+  h2 {
+    margin-top: 13px;
+    font-size: 25px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.55);
+  }
+}
+
+.btn-cta-leads {
+  color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+
+.card-lead-bottom-added {
+  background-color: $brand-success;
+}
+
+.leads-added-link {
+  margin-left: 5px;
+}
+
