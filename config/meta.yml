@@ -1,4 +1,4 @@
 meta_product_name: "JobDetective"
 meta_title: "JobDetective - We create opportunities for you!"
 meta_description: "Growth Hack your way into a job, which uses skills that you have."
-meta_image: "http://res.cloudinary.com/dbp2j1emu/image/upload/v1512725927/fb-image_i7f8de.png"                       # should exist in `app/assets/images/`
+meta_image: "http://res.cloudinary.com/dbp2j1emu/image/upload/c_fill,h_630,w_1200/v1512725927/fb-image_i7f8de.png"                       # should exist in `app/assets/images/`
